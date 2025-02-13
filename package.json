@@ -10,8 +10,19 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^6.6.1",
+    "@react-navigation/native": "^6.1.18",
+    "@react-navigation/native-stack": "^6.11.0",
     "react": "18.3.1",
-    "react-native": "0.76.7"
+    "react-native": "0.76.7",
+    "react-native-paper": "^5.13.1",
+    "react-native-reanimated": "^3.16.7",
+    "react-native-safe-area-context": "^5.2.0",
+    "react-native-screens": "^4.6.0",
+    "react-native-svg": "^15.11.1",
+    "react-native-svg-transformer": "^1.5.0",
+    "react-native-vector-icons": "^10.2.0",
+    "twrnc": "^4.6.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
