@@ -1,34 +1,33 @@
-import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {TouchableOpacity} from 'react-native';
-import SplashScreen from '../screens/SplashScreen';
+import React from 'react';
 import InitialScreen from '../screens/InitialScreen';
+import SplashScreen from '../screens/SplashScreen';
 
 // User side authentication screens start
-import SignupAsUser from '../screens/UserPartStackScreen/UserAuthenticationScreens/Signup';
-import LoginAsUser from '../screens/UserPartStackScreen/UserAuthenticationScreens/Login';
 import ForgotPasswordAsUser from '../screens/UserPartStackScreen/UserAuthenticationScreens/ForgotPassword';
-import VerificationAsUser from '../screens/UserPartStackScreen/UserAuthenticationScreens/Verification';
+import LoginAsUser from '../screens/UserPartStackScreen/UserAuthenticationScreens/Login';
 import ResetPasswordAsUser from '../screens/UserPartStackScreen/UserAuthenticationScreens/ResetPassword';
+import SignupAsUser from '../screens/UserPartStackScreen/UserAuthenticationScreens/Signup';
+import VerificationAsUser from '../screens/UserPartStackScreen/UserAuthenticationScreens/Verification';
 // User side authentication screens end
 
+// User side Main screens start
 
-// User side Main screens start 
-
-import UserInitialScreen from "../screens/UserPartStackScreen/UserSideStackScreens/InitialScreen"
+import UserInitialScreen from '../screens/UserPartStackScreen/UserSideStackScreens/InitialScreen';
 
 // User side Main screens end
 
-
-
-
 // Technician side authentication screens start
-import LoginScreen from '../screens/TechnicianPartStackScreens/LoginScreen';
 import ForgotPassword from '../screens/TechnicianPartStackScreens/ForgotPassword';
-import Verification from '../screens/TechnicianPartStackScreens/Verification';
+import LoginScreen from '../screens/TechnicianPartStackScreens/LoginScreen';
 import SetNewPassword from '../screens/TechnicianPartStackScreens/SetNewPassword';
+import Verification from '../screens/TechnicianPartStackScreens/Verification';
 // Technician side authentication screens start End
+
+// Technician side Profile screens start Start
+import TechnicianProfile from '../screens/TechnicianPartStackScreens/TechnicianProfile/TechnicianProfile';
+// Technician side Profile screens start End
 
 import TechnicianBottomTab from './TechnicianBottomTab';
 // import Icon from 'react-native-vector-icons/Ionicons';
@@ -127,10 +126,9 @@ const AppNavigation = () => {
 
         {/* User side authentication screens End */}
 
+        {/* User side Main screens Start*/}
 
-         {/* User side Main screens Start*/}
-
-         <Stack.Screen
+        <Stack.Screen
           name="UserInitialScreen"
           component={UserInitialScreen}
           options={{
@@ -139,15 +137,7 @@ const AppNavigation = () => {
           }}
         />
 
-         
-
-
-
-
-
-
-
-         {/* User side Main screens End*/}
+        {/* User side Main screens End*/}
 
         {/* Technician side authentication screens start */}
 
@@ -207,6 +197,22 @@ const AppNavigation = () => {
 
         {/* Technician side authentication screens End */}
 
+        {/* // Technician side Profile screens start Start */}
+
+        {/* // Technician side Profile screens start End */}
+
+        <Stack.Screen
+          name="TechnicianProfile"
+          component={TechnicianProfile}
+          options={{
+            headerShown: true,
+            // animation: 'none',
+            // presentation: 'transparentModal',
+          }}
+        />
+
+        {/* // Technician side Bottom Navigator  screen start  */}
+
         <Stack.Screen
           name="TechnicianBottomTab"
           component={TechnicianBottomTab}
@@ -217,6 +223,8 @@ const AppNavigation = () => {
           }}
         />
       </Stack.Navigator>
+
+      {/* // Technician side Bottom Navigator  screen End  */}
     </NavigationContainer>
   );
 };

@@ -1,34 +1,44 @@
-import React,{useEffect} from "react";
-import { View, Text, Image, TouchableOpacity, TextInput, StyleSheet,StatusBar } from "react-native";
-import { SvgXml } from "react-native-svg";
-import avatar from "../../assets/Icons/avater.png";
-import { IconNotification,search } from "../../assets/Icons/icons";
-
+import {useNavigation} from '@react-navigation/native';
+import React, {useEffect} from 'react';
+import {
+  Image,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import {SvgXml} from 'react-native-svg';
+import avatar from '../../assets/Icons/avater.png';
+import {IconNotification, search} from '../../assets/Icons/icons';
 
 const HeaderWithSearch = () => {
+  const navigation = useNavigation();
 
-   useEffect(() => {
-      
-      // Force the status bar background color to white and icons to black
-      StatusBar.setBarStyle('white-content'); // Black icons
-      StatusBar.setBackgroundColor('red'); // White background
-  
-      
-    }, []);
-
+  useEffect(() => {
+    // Force the status bar background color to white and icons to black
+    StatusBar.setBarStyle('white-content'); // Black icons
+    StatusBar.setBackgroundColor('red'); // White background
+  }, []);
 
   return (
     <View style={styles.headerContainer}>
       {/* Top Section: Avatar, Welcome Text, and Notification Icon */}
       <View style={styles.topSection}>
-        {/* Left Side: Avatar and Text */}
-        <View style={styles.leftContainer}>
-          <Image source={avatar} style={styles.avatar} />
-          <View>
-            <Text style={styles.welcomeText}>Welcome Back,</Text>
-            <Text style={styles.userName}>John Doe</Text>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate('TechnicianProfile');
+          }}>
+          {/* Left Side: Avatar and Text */}
+          <View style={styles.leftContainer}>
+            <Image source={avatar} style={styles.avatar} />
+            <View>
+              <Text style={styles.welcomeText}>Welcome Back,</Text>
+              <Text style={styles.userName}>John Doe</Text>
+            </View>
           </View>
-        </View>
+        </TouchableOpacity>
 
         {/* Right Side: Notification Icon */}
         <TouchableOpacity style={styles.notificationButton}>
@@ -51,21 +61,21 @@ const HeaderWithSearch = () => {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    backgroundColor: "red",
+    backgroundColor: 'red',
     paddingHorizontal: 20,
     paddingVertical: 15,
     borderBottomLeftRadius: 25,
     borderBottomRightRadius: 25,
   },
   topSection: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
     marginBottom: 10,
   },
   leftContainer: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   avatar: {
     width: 50,
@@ -74,22 +84,22 @@ const styles = StyleSheet.create({
     marginRight: 10,
   },
   welcomeText: {
-    color: "white",
+    color: 'white',
     fontSize: 14,
-    fontWeight: "400",
+    fontWeight: '400',
   },
   userName: {
-    color: "white",
+    color: 'white',
     fontSize: 18,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   notificationButton: {
     padding: 8,
   },
   searchContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "white",
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: 'white',
     borderRadius: 10,
     paddingHorizontal: 10,
   },
@@ -97,7 +107,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 8,
     fontSize: 16,
-    color: "black",
+    color: 'black',
   },
   searchIcon: {
     marginLeft: 8,

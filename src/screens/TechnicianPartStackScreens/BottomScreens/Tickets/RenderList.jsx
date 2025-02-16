@@ -1,57 +1,57 @@
-import React from 'react';
-import {View, Text, FlatList, TouchableOpacity, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-
+import React from 'react';
+import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {SvgXml} from 'react-native-svg';
 import {listNavigationIcon} from '../../../../assets/Icons/icons';
 const TicketList = () => {
   const navigation = useNavigation();
+
   const runningTickets = [
     {id: '1', title: 'ViewSonic', code: 'JF2656NCDS8', date: '17/12/2024'},
   ];
   const pastTickets = [
     {
-      id: '2',
+      id: '2-1', // Changed ID to make it unique
       title: 'ViewSonic',
       code: 'JF2656NCDS8',
       address: 'Road no. 14, Block-D, Banasree, Dhaka.',
       date: '10/12/2024',
     },
     {
-        id: '2',
-        title: 'ViewSonic',
-        code: 'JF2656NCDS8',
-        address: 'Road no. 14, Block-D, Banasree, Dhaka.',
-        date: '10/12/2024',
-      },
-      {
-        id: '2',
-        title: 'ViewSonic',
-        code: 'JF2656NCDS8',
-        address: 'Road no. 14, Block-D, Banasree, Dhaka.',
-        date: '10/12/2024',
-      },
-      {
-        id: '2',
-        title: 'ViewSonic',
-        code: 'JF2656NCDS8',
-        address: 'Road no. 14, Block-D, Banasree, Dhaka.',
-        date: '10/12/2024',
-      },
-      {
-        id: '2',
-        title: 'ViewSonic',
-        code: 'JF2656NCDS8',
-        address: 'Road no. 14, Block-D, Banasree, Dhaka.',
-        date: '10/12/2024',
-      },
-      {
-        id: '2',
-        title: 'ViewSonic',
-        code: 'JF2656NCDS8',
-        address: 'Road no. 14, Block-D, Banasree, Dhaka.',
-        date: '10/12/2024',
-      },
+      id: '2-2', // Changed ID to make it unique
+      title: 'ViewSonic',
+      code: 'JF2656NCDS8',
+      address: 'Road no. 14, Block-D, Banasree, Dhaka.',
+      date: '10/12/2024',
+    },
+    {
+      id: '2-3', // Changed ID to make it unique
+      title: 'ViewSonic',
+      code: 'JF2656NCDS8',
+      address: 'Road no. 14, Block-D, Banasree, Dhaka.',
+      date: '10/12/2024',
+    },
+    {
+      id: '2-4', // Changed ID to make it unique
+      title: 'ViewSonic',
+      code: 'JF2656NCDS8',
+      address: 'Road no. 14, Block-D, Banasree, Dhaka.',
+      date: '10/12/2024',
+    },
+    {
+      id: '2-5', // Changed ID to make it unique
+      title: 'ViewSonic',
+      code: 'JF2656NCDS8',
+      address: 'Road no. 14, Block-D, Banasree, Dhaka.',
+      date: '10/12/2024',
+    },
+    {
+      id: '2-6', // Changed ID to make it unique
+      title: 'ViewSonic',
+      code: 'JF2656NCDS8',
+      address: 'Road no. 14, Block-D, Banasree, Dhaka.',
+      date: '10/12/2024',
+    },
   ];
 
   const renderRunningTicket = ({item}) => (
@@ -97,19 +97,15 @@ const TicketList = () => {
           data={runningTickets}
           renderItem={renderRunningTicket}
           keyExtractor={item => item.id}
-          
-          
         />
       </View>
-      <View >
+      <View>
         <Text style={styles.sectionTitle}>Past Tickets</Text>
         <FlatList
           data={pastTickets}
           renderItem={renderPastTicket}
           keyExtractor={item => item.id}
-          ListFooterComponent={<View style={{ marginBottom:"60%"}} />} // Extra bottom space
-          
-          
+          ListFooterComponent={<View style={{marginBottom: '60%'}} />} // Extra bottom space
         />
       </View>
     </View>
