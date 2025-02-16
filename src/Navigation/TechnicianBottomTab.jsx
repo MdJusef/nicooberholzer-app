@@ -5,7 +5,7 @@ import Chats from '../screens/TechnicianPartStackScreens/BottomScreens/Chats';
 import InspectionSheet from '../screens/TechnicianPartStackScreens/BottomScreens/InspectionSheet';
 import JobCard from '../screens/TechnicianPartStackScreens/BottomScreens/JobCard';
 import Location from '../screens/TechnicianPartStackScreens/BottomScreens/Location';
-import Tickets from '../screens/TechnicianPartStackScreens/BottomScreens/Tickets';
+import Tickets from '../screens/TechnicianPartStackScreens/BottomScreens/Tickets/Tickets';
 
 // Importing SVG components
 import ChatsIcon from '../assets/Icons/Chats.svg';
